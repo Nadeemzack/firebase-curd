@@ -60,7 +60,7 @@ class _DatainputState extends State<Datainput> {
             StreamBuilder<QuerySnapshot>(
                 stream:
                     FirebaseFirestore.instance.collection("users").snapshots(),
-                builder: (context, snapshot) {  
+                builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.active) {
                     if (snapshot.hasData && snapshot.data != null) {
                       return Expanded(
@@ -77,7 +77,7 @@ class _DatainputState extends State<Datainput> {
                                       .collection("users")
                                       .doc(s.id)
                                       .delete();
-                                  print("delete item and id is  ${s.id}");
+                                  print("delete item and id is :  ${s.id}");
                                 },
                                 icon: const Icon(Icons.delete)),
                             title: Text(
