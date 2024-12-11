@@ -1,8 +1,25 @@
-
-
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_new/API/dio/dio_example.dart';
+import 'package:firebase_new/API/sample.api.dart';
+import 'package:firebase_new/API/sample.api2.dart';
+import 'package:firebase_new/API/sample.api3.dart';
+import 'package:firebase_new/API/sample.api4.dart';
+import 'package:firebase_new/API/sample5.dart';
+import 'package:firebase_new/homescreen.dart';
+import 'package:firebase_new/library_mgmt/admin/LOginScreenAdmin.dart';
+import 'package:firebase_new/library_mgmt/login_screen.dart';
+import 'package:firebase_new/library_mgmt/pre_login.dart';
+import 'package:firebase_new/loginPage.dart';
+import 'package:firebase_new/pdf_file_fetch/pdf2.dart';
+import 'package:firebase_new/pdf_file_fetch/pdf_fetch.dart';
+import 'package:firebase_new/pdf_file_fetch/pdffile3.dart';
+import 'package:firebase_new/pdf_file_fetch/pdfview.dart';
 
-import 'package:firebase_new/phono_varification.dart';
+//import 'package:firebase_new/json/jsontest.dart';
+
+import 'package:firebase_new/services/notification_services.dart';
+import 'package:firebase_new/shared_preferences/shared_preferences.dart';
+import 'package:firebase_new/streambuilder/streambuilder.dart';
 
 import 'package:flutter/material.dart';
 
@@ -13,6 +30,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  NotificationServices().intialize;
   //  it can used to insert the data {
 
   /*
@@ -75,6 +94,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
+  var url =
+      "https://www.abesit.in/wp-content/uploads/2023/10/BASICS-OF-DATA-BASE-MANAGEMENT-SYSTEM-KOE-067.pdf";
+  //   "https://firebasestorage.googleapis.com/v0/b/fir-new-2a4d8.appspot.com/o/COMPUTER-ORGANIZATION-ARCHITECTURE-KCA-105.pdf?alt=media&token=8c023e36-da35-411e-8830-18552ad5eb7e";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -83,7 +105,7 @@ class _MyAppState extends State<MyApp> {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const Datainput());
+        home: PreLogin());
   }
 }
 
